@@ -15,7 +15,7 @@ int main() {
 
     if (interestRate <= 0) {
         printf("Error: Interest rate must be positive.\n");
-        return 1;  // Indicate error
+        return 1;
     }
 
     interestRate /= 100.0;
