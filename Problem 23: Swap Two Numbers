@@ -1,0 +1,19 @@
+    #include <stdio.h>
+
+int main() {
+    int x, y;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &x, &y);
+
+    printf("Before swapping: x = %d, y = %d\n", x, y);
+
+    // Swap using arithmetic operations
+    x = x + y;   // x now holds the sum of x and y
+    y = x - y;   // y becomes the difference of the new x (sum) and original y
+    x = x - y;   // x is updated with the difference of the new x (sum) and new y
+
+    printf("After swapping: x = %d, y = %d\n", x, y);
+
+    return 0;
+}
