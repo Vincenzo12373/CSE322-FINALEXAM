@@ -8,10 +8,9 @@ int main() {
 
     printf("Before swapping: x = %d, y = %d\n", x, y);
 
-    // Swap using arithmetic operations
-    x = x + y;   // x now holds the sum of x and y
-    y = x - y;   // y becomes the difference of the new x (sum) and original y
-    x = x - y;   // x is updated with the difference of the new x (sum) and new y
+    x = x + y; 
+    y = x - y;
+    x = x - y;
 
     printf("After swapping: x = %d, y = %d\n", x, y);
 
