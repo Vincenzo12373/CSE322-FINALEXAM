@@ -1,17 +1,15 @@
 #include <stdio.h>
-#include <ctype.h>  // For tolower
+#include <ctype.h>
 
 int isPalindrome(char str[]) {
     int len = strlen(str);
-    int start = 0, end = len - 2;  // Exclude null terminator
+    int start = 0, end = len - 2;
 
-    // Convert characters to lowercase for case-insensitive comparison
     for (int i = 0; str[i] != '\0'; i++) {
         str[i] = tolower(str[i]);
     }
 
     while (start < end) {
-        // Skip non-alphanumeric characters
         while (start < end && !isalnum(str[start])) {
             start++;
         }
@@ -34,8 +32,8 @@ int main() {
     char str[100];
 
     printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);  // Use fgets for safer input
-    str[strcspn(str, "\n")] = '\0';  // Remove trailing newline from fgets
+    fgets(str, sizeof(str), stdin); 
+    str[strcspn(str, "\n")] = '\0';  
 
     if (isPalindrome(str)) {
         printf("%s is a palindrome.\n", str);
