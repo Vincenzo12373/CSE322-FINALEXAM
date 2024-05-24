@@ -11,10 +11,10 @@ int main() {
 
     if (exponent < 0) {
         printf("Error: Exponent cannot be negative.\n");
-        return 1;  // Indicate error
+        return 1;  
     }
 
-    // Calculate power using a loop
+   
     for (int i = 1; i <= exponent; i++) {
         power *= base;
     }
