@@ -12,13 +12,10 @@ int main() {
     printf("Enter the investment period in year: ");
     scanf("%f", &timeInYears);
 
-    // Convert interest rate to decimal (e.g., 5% becomes 0.05)
     interestRate /= 100.0;
 
-    // Calculate simple interest using the formula
     float simpleInterest = principal * interestRate * timeInYears;
 
-    // Print results with two decimal places
     printf("Principal amount: %.2f\n", principal);
     printf("Annual interest rate: %.2f%%\n", interestRate * 100);
     printf("Investment period: %.2f years\n", timeInYears);
