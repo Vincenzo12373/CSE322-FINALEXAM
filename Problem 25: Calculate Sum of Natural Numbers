@@ -8,10 +8,9 @@ int main() {
 
     if (n <= 0) {
         printf("Invalid input. Please enter a positive integer.\n");
-        return 1;  // Indicate error
+        return 1;
     }
 
-    // Calculate sum using a loop
     for (i = 1; i <= n; i++) {
         sum += i;
     }
