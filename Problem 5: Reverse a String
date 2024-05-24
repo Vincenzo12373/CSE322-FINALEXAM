@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <string.h>  // For strlen
+#include <string.h>
 
 void reverseStringLoop(char str[]) {
     int len = strlen(str);
-    int start = 0, end = len - 2;  // Exclude null terminator
+    int start = 0, end = len - 2;
 
     while (start < end) {
         char temp = str[start];
@@ -18,8 +18,8 @@ int main() {
     char str[100];
 
     printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);  // Use fgets for safer input
-    str[strcspn(str, "\n")] = '\0';  // Remove trailing newline from fgets
+    fgets(str, sizeof(str), stdin); 
+    str[strcspn(str, "\n")] = '\0'; 
 
     printf("Original string: %s\n", str);
 
