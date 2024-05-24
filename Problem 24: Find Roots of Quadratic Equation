@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>  // for sqrt function
+#include <math.h>
 
 int main() {
     float a, b, c, discriminant, root;
@@ -7,33 +7,27 @@ int main() {
     printf("Enter a, b, and c of the quadratic equation (ax^2 + bx + c = 0): ");
     scanf("%f %f %f", &a, &b, &c);
 
-    // Check for non-quadratic case (a = 0)
     if (a == 0) {
         if (b == 0) {
             printf("The equation is not a quadratic equation.\n");
-            return 1;  // Indicate error
+            return 1;
         } else {
             printf("The equation has one root: x = %f\n", -c / b);
-            return 0;  // Indicate single root
+            return 0;
         }
     }
 
-    // Calculate discriminant
     discriminant = b * b - 4 * a * c;
 
-    // Print root(s) based on discriminant
     if (discriminant > 0) {
-        // Two real and distinct roots
         root = (-b + sqrt(discriminant)) / (2 * a);
         printf("x1 = %.2f\n", root);
         root = (-b - sqrt(discriminant)) / (2 * a);
         printf("x2 = %.2f\n", root);
     } else if (discriminant == 0) {
-        // Two equal real roots
         root = -b / (2 * a);
         printf("x1 = x2 = %.2f\n", root);
     } else {
-        // Two complex roots (imaginary part displayed as 'i')
         float realPart = -b / (2 * a);
         float imaginaryPart = sqrt(-discriminant) / (2 * a);
         printf("x1 = %.2f + %.2fi\n", realPart, imaginaryPart);
