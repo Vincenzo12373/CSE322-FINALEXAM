@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-// Function to find the GCD using the Euclidean algorithm
 int findGCD(int a, int b) {
     // Ensure a is the larger number
     if (a < b) {
@@ -9,7 +8,6 @@ int findGCD(int a, int b) {
         b = temp;
     }
 
-    // Apply the Euclidean algorithm
     while (b != 0) {
         int remainder = a % b;
         a = b;
@@ -22,14 +20,11 @@ int findGCD(int a, int b) {
 int main() {
     int num1, num2, gcd;
 
-    // Input two integers from the user
     printf("Enter two integers: ");
     scanf("%d %d", &num1, &num2);
 
-    // Find the GCD of the two numbers
     gcd = findGCD(num1, num2);
 
-    // Output the GCD
     printf("The GCD of %d and %d is %d.\n", num1, num2, gcd);
 
     return 0;
