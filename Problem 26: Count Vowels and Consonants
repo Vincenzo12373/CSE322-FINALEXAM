@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <ctype.h>  // For tolower function
+#include <ctype.h>
 
 int main() {
     char str[100];
@@ -8,12 +8,10 @@ int main() {
     printf("Enter a string: ");
     fgets(str, sizeof(str), stdin);
 
-    // Convert all characters to lowercase for case-insensitive counting
     for (i = 0; str[i] != '\0'; i++) {
         str[i] = tolower(str[i]);
     }
 
-    // Count vowels and consonants
     for (i = 0; str[i] != '\0'; i++) {
         if (str[i] >= 'a' && str[i] <= 'z') {  // Check for alphabets only
             if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u') {
