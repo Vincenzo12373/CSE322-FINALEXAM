@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function to find the GCD using the Euclidean algorithm
+int findGCD(int a, int b) {
+    while (b != 0) {
+        int remainder = a % b;
+        a = b;
+        b = remainder;
+    }
+    return a;
+}
+
+// Function to find the LCM using the GCD
+int findLCM(int a, int b) {
+    int gcd = findGCD(a, b);
+    return abs(a * b) / gcd;
+}
+
+int main() {
+    int num1, num2, lcm;
+
+    // Input two integers from the user
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Find the LCM of the two numbers
+    lcm = findLCM(num1, num2);
+
+    // Output the LCM
+    printf("The LCM of %d and %d is %d.\n", num1, num2, lcm);
+
+    return 0;
+}
