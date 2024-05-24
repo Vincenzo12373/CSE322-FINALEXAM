@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>  // For pow function
+#include <math.h> 
 
 int main() {
     int num, originalNum, remainder, n = 0, result = 0;
@@ -9,7 +9,7 @@ int main() {
 
     originalNum = num;
 
-    // Count the number of digits (using a loop)
+  
     while (originalNum != 0) {
         originalNum /= 10;
         n++;
@@ -17,14 +17,12 @@ int main() {
 
     originalNum = num;
 
-    // Calculate the sum of nth power of each digit
     while (originalNum != 0) {
         remainder = originalNum % 10;
         result += pow(remainder, n);
         originalNum /= 10;
     }
 
-    // Check if the calculated sum is equal to the original number
     if (result == num)
         printf("%d is an Armstrong number.\n", num);
     else
