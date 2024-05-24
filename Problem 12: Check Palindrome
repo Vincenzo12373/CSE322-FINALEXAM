@@ -1,24 +1,47 @@
 #include <stdio.h>
+#include <ctype.h>  // For tolower
+
+int isPalindrome(char str[]) {
+    int len = strlen(str);
+    int start = 0, end = len - 2;  // Exclude null terminator
+
+    // Convert characters to lowercase for case-insensitive comparison
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+
+    while (start < end) {
+        // Skip non-alphanumeric characters
+        while (start < end && !isalnum(str[start])) {
+            start++;
+        }
+        while (start < end && !isalnum(str[end])) {
+            end--;
+        }
+
+        if (str[start] != str[end]) {
+            return 0;  // Not a palindrome
+        }
+
+        start++;
+        end--;
+    }
+
+    return 1;  // Palindrome
+}
 
 int main() {
-    int arr[100], n, smallest;
+    char str[100];
 
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);  // Use fgets for safer input
+    str[strcspn(str, "\n")] = '\0';  // Remove trailing newline from fgets
 
-    printf("Enter the elements: ");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    if (isPalindrome(str)) {
+        printf("%s is a palindrome.\n", str);
+    } else {
+        printf("%s is not a palindrome.\n", str);
     }
-
-    smallest = arr[0];  // Initialize with the first element
-    for (int i = 1; i < n; i++) {
-        if (arr[i] < smallest) {
-            smallest = arr[i];
-        }
-    }
-
-    printf("Smallest element in array: %d\n", smallest);
 
     return 0;
 }
