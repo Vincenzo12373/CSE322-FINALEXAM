@@ -11,7 +11,6 @@ int main() {
         return 0;
     }
 
-    // Handle negative numbers (replace with absolute values if needed)
     decimal = decimal < 0 ? -decimal : decimal;
 
     for (i = 0; decimal != 0; i++) {
@@ -22,7 +21,6 @@ int main() {
 
     printf("Binary equivalent: ");
 
-    // Print binary digits in reverse order
     for (i = i - 1; i >= 0; i--) {
         printf("%d", binary % 10);
         binary /= 10;
