@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int base, exponent, power = 1;
+
+    printf("Enter the base number: ");
+    scanf("%d", &base);
+
+    printf("Enter the exponent (non-negative integer): ");
+    scanf("%d", &exponent);
+
+    if (exponent < 0) {
+        printf("Error: Exponent cannot be negative.\n");
+        return 1;  // Indicate error
+    }
+
+    // Calculate power using a loop
+    for (int i = 1; i <= exponent; i++) {
+        power *= base;
+    }
+
+    printf("%d raised to the power of %d is %d\n", base, exponent, power);
+
+    return 0;
+}
