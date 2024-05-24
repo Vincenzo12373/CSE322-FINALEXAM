@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h> // for pow function
+
+int main() {
+    double principal, interestRate, timeInYears;
+
+    printf("Enter the principal amount: ");
+    scanf("%lf", &principal);
+
+    printf("Enter the annual interest rate: ");
+    scanf("%lf", &interestRate);
+
+    printf("Enter the investment period in year: ");
+    scanf("%lf", &timeInYears);
+
+    // Validate interest rate (positive value)
+    if (interestRate <= 0) {
+        printf("Error: Interest rate must be positive.\n");
+        return 1;  // Indicate error
+    }
+
+    // Convert interest rate to decimal (e.g., 5% becomes 0.05)
+    interestRate /= 100.0;
+
+    // Calculate amount using compound interest formula
+    double amount = principal * pow(1 + interestRate, timeInYears);
+
+    // Calculate compound interest
+    double compoundInterest = amount - principal;
+
+    // Print results with two decimal places
+    printf("Principal amount: %.2lf\n", principal);
+    printf("Annual interest rate: %.2lf%%\n", interestRate * 100);
+    printf("Investment period: %.2lf years\n", timeInYears);
+    printf("Amount after %.2lf years: %.2lf\n", timeInYears, amount);
+    printf("Compound interest: %.2lf\n", compoundInterest);
+
+    return 0;
+}
