@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int arr[100], n, sum = 0;  // Pre-initialize sum to 0
+    int arr[100], n, sum = 0
 
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
     if (n > 100) {
         printf("Error: Array size cannot exceed 100.\n");
-        return 1;  // Indicate error
+        return 1;  
     }
 
     printf("Enter the elements: ");
@@ -16,7 +16,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    // Calculate sum using a loop
+   
     for (int i = 0; i < n; i++) {
         sum += arr[i];
     }
