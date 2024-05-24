@@ -10,7 +10,7 @@ int main() {
         remainder = binary % 10;
         if (remainder < 0 || remainder > 1) {
             printf("Invalid binary number (must contain only 0s and 1s).\n");
-            return 1;  // Indicate error
+            return 1; 
         }
         decimal += remainder * base;
         base *= 2;
