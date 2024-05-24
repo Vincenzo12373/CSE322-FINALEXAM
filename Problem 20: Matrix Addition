@@ -22,7 +22,6 @@ int main() {
         }
     }
 
-    // Add the corresponding elements of the matrices
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
             sum[i][j] = matrix1[i][j] + matrix2[i][j];
